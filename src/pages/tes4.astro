@@ -1,0 +1,186 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+<section class="feature-section">
+
+    <div class="feature-card">
+        <div class="feature-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C4DFF"/>
+      <stop offset="100%" stop-color="#FF5EA8"/>
+    </linearGradient>
+  </defs>
+
+  <path
+    d="M12 2L14.8 8.2L21 9L16.5 13.2L17.8 20L12 16.8L6.2 20L7.5 13.2L3 9L9.2 8.2L12 2Z"
+    fill="url(#grad)"
+  />
+</svg>
+        </div>
+
+        <h3>Pelajari 20+ Alat AI</h3>
+
+        <p>
+            Anda akan mempelajari sekitar 20 alat AI yang berbeda seperti ChatGPT,
+            Perplexity, Runway, Midjourney, Leonardo AI, dan masih banyak lagi.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">
+            💬
+        </div>
+
+        <h3>Sesi Tanya Jawab Interaktif</h3>
+
+        <p>
+            Dapatkan jawaban atas pertanyaan Anda langsung dari mentor sehingga
+            pemahaman menjadi lebih baik.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <div class="feature-icon">
+            📄
+        </div>
+
+        <h3>PDF Sumber Daya Eksklusif</h3>
+
+        <p>
+            Dapatkan akses ke PDF pilihan yang berisi wawasan praktis dan rekomendasi
+            alat AI terbaik.
+        </p>
+    </div>
+
+</section>
+
+<style>
+
+.feature-section{
+    max-width:1300px;
+    margin:auto;
+    padding:80px 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:24px;
+}
+.feature-section{
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:80px 20px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:24px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            color-mix(in srgb,var(--primary) 15%,transparent),
+            transparent 70%
+        );
+
+}
+
+.feature-card{
+
+    position:relative;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:70px 35px 35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:0 15px 40px color-mix(in srgb,var(--primary) 25%,transparent);
+
+}
+
+.feature-icon{
+
+    position:absolute;
+
+    top:-34px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:68px;
+
+    height:68px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--surface);
+
+    border:2px solid var(--border);
+
+    border-radius:50%;
+
+    font-size:30px;
+
+    color:var(--primary);
+
+    box-shadow:
+        0 0 0 8px var(--bg),
+        var(--shadow);
+
+}
+
+.feature-card h3{
+
+    margin-bottom:20px;
+
+    color:var(--text);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.feature-card p{
+
+    margin:0;
+
+    color:var(--text-secondary);
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+}
+<style>
+<style>
+</style>
+</MainLayout>
