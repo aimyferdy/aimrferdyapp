@@ -460,11 +460,16 @@ font-size:3rem;
 
 @media(max-width:700px){
 
-.hero-info{
+ .hero-info{
 
-grid-template-columns:1fr;
+        display:grid;
 
-}
+        grid-template-columns:repeat(2,1fr);
+
+        gap:16px;
+
+    }
+
 
 .hero-left h1{
 
