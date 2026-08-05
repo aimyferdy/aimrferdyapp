@@ -145,15 +145,21 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <style>
 .hero-app{
-
     padding:70px 0;
 
     background:
-    radial-gradient(circle at 60% 40%,rgba(38,188,108,.25),transparent 45%),
-    linear-gradient(135deg,#1f5f38,#48a76b);
+        radial-gradient(
+            circle at 70% 30%,
+            color-mix(in srgb, var(--primary) 25%, transparent),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            color-mix(in srgb, var(--primary) 75%, var(--text)),
+            var(--primary)
+        );
 
-    color:#fff;
-
+    color:var(--surface);
 }
 
 .hero-grid{
