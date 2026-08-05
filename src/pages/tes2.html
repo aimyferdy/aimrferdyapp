@@ -1,0 +1,361 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+<section class="info-section">
+
+    <!-- ULASAN -->
+
+    <article class="info-card">
+
+        <div class="section-title">
+
+            <span class="number">06</span>
+
+            <h2>Ulasan Pengguna</h2>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="review-grid">
+
+            <article class="review-card">
+
+                <span class="quote">❞</span>
+
+                <h3>SALSA</h3>
+
+                <p>
+                    Sebagai penggemar sepak bola, saya sangat menikmati
+                    Ai Mr Ferdy. Gameplay terasa realistis sehingga
+                    pengalaman bermain menjadi lebih seru dan menantang.
+                </p>
+
+            </article>
+
+            <article class="review-card">
+
+                <span class="quote">❞</span>
+
+                <h3>BIMA</h3>
+
+                <p>
+                    Ai Mr Ferdy menawarkan banyak strategi dan variasi
+                    permainan. Walaupun masih ada beberapa kekurangan,
+                    secara keseluruhan sangat memuaskan.
+                </p>
+
+            </article>
+
+            <article class="review-card active">
+
+                <span class="quote">❞</span>
+
+                <h3>ASTRI</h3>
+
+                <p>
+                    Mode online membuat pertandingan semakin seru.
+                    Bermain bersama pemain lain memberikan pengalaman
+                    yang jauh lebih menyenangkan.
+                </p>
+
+            </article>
+
+        </div>
+
+    </article>
+
+    <!-- FAQ -->
+
+    <article class="info-card">
+
+        <div class="section-title">
+
+            <span class="number">07</span>
+
+            <h2>Pertanyaan Umum</h2>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="faq-list">
+
+            <details>
+
+                <summary>
+
+                    <span class="faq-icon">+</span>
+
+                    Apa saja mode permainan yang tersedia di Ai Mr Ferdy?
+
+                </summary>
+
+                <p>
+                    Tersedia mode online, latihan, turnamen dan beberapa
+                    mode permainan lainnya.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+
+                    <span class="faq-icon">+</span>
+
+                    Bagaimana cara melakukan kustomisasi tim?
+
+                </summary>
+
+                <p>
+                    Masuk ke menu pengaturan tim kemudian pilih pemain,
+                    formasi dan perlengkapan yang diinginkan.
+                </p>
+
+            </details>
+
+            <details>
+
+                <summary>
+
+                    <span class="faq-icon">+</span>
+
+                    Apakah Ai Mr Ferdy dapat dimainkan secara offline?
+
+                </summary>
+
+                <p>
+                    Beberapa mode dapat dimainkan offline, sedangkan mode
+                    online memerlukan koneksi internet.
+                </p>
+
+            </details>
+
+        </div>
+
+    </article>
+
+</section>
+<style>.info-section{
+
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+
+}
+
+.info-card{
+
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
+    padding:36px;
+
+}
+
+.section-title{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+}
+
+.number{
+
+    width:42px;
+    height:42px;
+
+    display:grid;
+    place-items:center;
+
+    background:color-mix(in srgb,var(--primary) 12%,var(--surface));
+
+    color:var(--primary);
+
+    border-radius:12px;
+
+    font-weight:700;
+
+}
+
+.section-title h2{
+
+    margin:0;
+
+    font-size:2rem;
+
+    color:var(--text);
+
+}
+
+.divider{
+
+    height:1px;
+
+    background:color-mix(in srgb,var(--primary) 20%,var(--border));
+
+    margin:24px 0 20px;
+
+}
+
+.review-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+
+}
+
+.review-card{
+
+    position:relative;
+
+    background:color-mix(in srgb,var(--primary) 6%,var(--surface));
+
+    border:1px solid color-mix(in srgb,var(--primary) 18%,var(--border));
+
+    border-radius:var(--radius);
+
+    padding:24px;
+
+}
+
+.review-card.active{
+
+    border-color:var(--text);
+
+}
+
+.review-card h3{
+
+    margin:0 0 14px;
+
+    color:var(--primary);
+
+    font-size:1rem;
+
+}
+
+.review-card p{
+
+    margin:0;
+
+    color:var(--text-secondary);
+
+    line-height:2;
+
+}
+
+.quote{
+
+    position:absolute;
+
+    top:18px;
+    right:18px;
+
+    font-size:2rem;
+
+    color:var(--text);
+
+}
+
+.faq-list{
+
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+
+}
+
+.faq-list details{
+
+    background:var(--surface-hover);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+}
+
+.faq-list summary{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    padding:20px;
+
+    cursor:pointer;
+
+    list-style:none;
+
+    color:var(--text);
+
+    font-weight:600;
+
+}
+
+.faq-list summary::-webkit-details-marker{
+
+    display:none;
+
+}
+
+.faq-icon{
+
+    width:34px;
+    height:34px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    background:var(--surface);
+
+    color:var(--primary);
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    flex:none;
+
+}
+
+.faq-list details[open] .faq-icon{
+
+    transform:rotate(45deg);
+
+}
+
+.faq-list details p{
+
+    padding:0 20px 20px 70px;
+
+    margin:0;
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+@media (max-width:900px){
+
+    .review-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+</style>
+</MainLayout>
