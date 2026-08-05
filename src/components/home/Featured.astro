@@ -1,45 +1,64 @@
-<section class="featured home-section home-section--surface">
-  <div class="home-wrap">
+---
+import { SITE } from "../../lib/site";
 
-    <header class="home-header">
-      <span class="home-label">WHY AI MR FERDY</span>
+const { posts = [] } = Astro.props;
+---
 
-      <h2 class="home-title">
-        Platform AI yang Dibangun untuk Proses Penelitian Modern
-      </h2>
+<section class="featured home-section">
 
-      <p class="home-desc">
-        AI Mr Ferdy bukan sekadar chatbot. Platform ini dirancang sebagai Smart Research Assistant yang membantu mahasiswa, dosen, peneliti, dan akademisi menyelesaikan berbagai tahapan penelitian dengan lebih cepat, lebih terstruktur, dan tetap menjaga kualitas hasil akhir.
-      </p>
-    </header>
+  <div class="home-header">
+    <span class="home-label">Featured Articles</span>
 
-    <div class="home-grid">
+    <h2>AI Research & Productivity Guides</h2>
 
-      <article class="home-card">
-        <h3>Literature Review Lebih Cepat</h3>
+    <p>
+      Artikel pilihan AI Mr Ferdy yang membahas artificial intelligence,
+      penelitian, SEO, produktivitas, dan teknologi digital modern.
+    </p>
+  </div>
 
-        <p>
-          Membantu memahami jurnal, menemukan poin penting, membandingkan penelitian terdahulu, serta menyusun tinjauan pustaka yang lebih sistematis tanpa harus membaca setiap dokumen dari awal.
-        </p>
-      </article>
+  <div class="featured-grid">
 
-      <article class="home-card">
-        <h3>Penulisan Akademik Lebih Terarah</h3>
+    {
+      posts.map((post) => (
 
-        <p>
-          Mendukung penyusunan proposal, metodologi, pembahasan, hingga kesimpulan dengan struktur yang lebih rapi sehingga proses penulisan menjadi lebih efisien dan mudah dikembangkan.
-        </p>
-      </article>
+        <article class="featured-card">
 
-      <article class="home-card">
-        <h3>Produktivitas Penelitian Meningkat</h3>
+          <a href={`/blog/${post.slug}/`}>
 
-        <p>
-          Mengurangi pekerjaan berulang dalam proses riset sehingga pengguna dapat lebih fokus pada analisis, validasi data, pengembangan ide, dan kontribusi ilmiah yang bernilai.
-        </p>
-      </article>
+            <figure class="featured-image">
 
-    </div>
+              <img
+                src={SITE.url(`/api/og/${post.slug}.svg`)}
+                alt={post.data.title}
+                loading="lazy"
+                width="1200"
+                height="630"
+              />
+
+            </figure>
+
+            <div class="featured-content">
+
+              <h3>{post.data.title}</h3>
+
+              {post.data.description && (
+                <p>{post.data.description}</p>
+              )}
+
+              <span class="featured-link">
+                Read Article →
+              </span>
+
+            </div>
+
+          </a>
+
+        </article>
+
+      ))
+    }
 
   </div>
+
 </section>
