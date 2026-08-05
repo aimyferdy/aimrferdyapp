@@ -1,0 +1,176 @@
+<section class="categories">
+
+  <div class="container">
+
+    <header class="categories__header">
+
+      <span class="categories__label">
+        Jelajahi Topik
+      </span>
+
+      <h2>
+        Temukan Materi Sesuai Fokus Pembelajaran dan Penelitian
+      </h2>
+
+      <p>
+        AI Mr Ferdy menghadirkan berbagai topik yang dirancang untuk membantu proses belajar, penelitian, dan pengembangan karya ilmiah. Pilih kategori yang paling sesuai dengan kebutuhan agar informasi lebih mudah ditemukan.
+      </p>
+
+    </header>
+
+    <div class="categories__grid">
+
+      <article class="category">
+        <h3>Penelitian</h3>
+        <p>
+          Panduan mengenai metode penelitian, penyusunan proposal, kerangka berpikir, hingga teknik menyusun karya ilmiah secara sistematis.
+        </p>
+        <a href="/kategori/penelitian">
+          Lihat Kategori →
+        </a>
+      </article>
+
+      <article class="category">
+        <h3>Jurnal Ilmiah</h3>
+        <p>
+          Pelajari cara membaca, memahami, mengevaluasi, dan merangkum jurnal ilmiah secara lebih efisien menggunakan pendekatan yang terstruktur.
+        </p>
+        <a href="/kategori/jurnal">
+          Lihat Kategori →
+        </a>
+      </article>
+
+      <article class="category">
+        <h3>Artificial Intelligence</h3>
+        <p>
+          Temukan pembahasan mengenai perkembangan AI, penerapannya di dunia akademik, serta berbagai teknologi yang mendukung aktivitas penelitian.
+        </p>
+        <a href="/kategori/artificial-intelligence">
+          Lihat Kategori →
+        </a>
+      </article>
+
+      <article class="category">
+        <h3>Produktivitas Akademik</h3>
+        <p>
+          Berisi berbagai strategi untuk mengatur waktu, meningkatkan fokus belajar, serta menyelesaikan pekerjaan akademik dengan lebih efektif.
+        </p>
+        <a href="/kategori/produktivitas">
+          Lihat Kategori →
+        </a>
+      </article>
+
+      <article class="category">
+        <h3>Sitasi dan Referensi</h3>
+        <p>
+          Pelajari teknik menyusun sitasi dan daftar pustaka yang konsisten sesuai kebutuhan penulisan ilmiah.
+        </p>
+        <a href="/kategori/sitasi">
+          Lihat Kategori →
+        </a>
+      </article>
+
+      <article class="category">
+        <h3>Literature Review</h3>
+        <p>
+          Kumpulan materi mengenai pencarian referensi, analisis literatur, hingga penyusunan tinjauan pustaka secara lebih terarah.
+        </p>
+        <a href="/kategori/literature-review">
+          Lihat Kategori →
+        </a>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+.categories{
+    padding:5rem 1rem;
+    background:var(--surface);
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.categories__header{
+    max-width:760px;
+    margin:0 auto 3rem;
+    text-align:center;
+}
+
+.categories__label{
+    display:inline-block;
+    margin-bottom:1rem;
+    padding:.45rem 1rem;
+    border-radius:999px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    color:var(--primary);
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.categories__header h2{
+    color:var(--text);
+    margin-bottom:1rem;
+    font-size:clamp(2rem,4vw,3rem);
+}
+
+.categories__header p{
+    color:var(--text-secondary);
+    line-height:1.8;
+}
+
+.categories__grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1.5rem;
+}
+
+.category{
+    padding:2rem;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    transition:var(--transition);
+}
+
+.category:hover{
+    transform:translateY(-4px);
+    box-shadow:var(--shadow);
+}
+
+.category h3{
+    color:var(--text);
+    margin-bottom:1rem;
+}
+
+.category p{
+    color:var(--text-secondary);
+    line-height:1.8;
+    margin-bottom:1.5rem;
+}
+
+.category a{
+    color:var(--primary);
+    text-decoration:none;
+    font-weight:600;
+}
+
+@media(max-width:900px){
+
+.categories{
+    padding:4rem 1rem;
+}
+
+.categories__grid{
+    grid-template-columns:1fr;
+}
+
+}
+</style>
