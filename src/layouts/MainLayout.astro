@@ -39,6 +39,9 @@ const faqSchema = generateFaqSchema(html);
     document.documentElement.classList.add("light-mode");
   }
 </script>
+ <script is:inline>
+(()=>{const savedTheme=localStorage.getItem("theme");const systemTheme=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=savedTheme||systemTheme})()
+</script>
 </head>
 
 <body>
