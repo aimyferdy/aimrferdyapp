@@ -1,0 +1,284 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+<section class="update-section">
+
+    <div class="update-grid">
+
+        <article class="update-card">
+
+            <div class="card-head">
+
+                <span class="number">02</span>
+
+                <h2>Pembaruan Terbaru</h2>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <p>
+                Pembaruan terbaru Ai Mr Ferdy membawa fitur gameplay yang lebih
+                halus dan sistem kontrol yang lebih responsif, memberikan
+                pengalaman bermain yang lebih baik.
+            </p>
+
+        </article>
+
+        <article class="update-card">
+
+            <div class="card-head">
+
+                <span class="number">03</span>
+
+                <h2>Pembaruan Sebelumnya</h2>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <p>
+                Pembaruan sebelumnya dari Ai Mr Ferdy menambahkan beberapa klub
+                baru dan mode permainan yang menarik sehingga pengalaman
+                bermain menjadi semakin bervariasi.
+            </p>
+
+        </article>
+
+        <article class="update-card">
+
+            <div class="card-head">
+
+                <span class="number">04</span>
+
+                <h2>Kelebihan</h2>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="feature-list">
+
+                <li>
+
+                    <span class="icon">✓</span>
+
+                    Grafis yang realistis dan memukau.
+
+                </li>
+
+                <li>
+
+                    <span class="icon">✓</span>
+
+                    Bermain online bersama pemain seluruh dunia.
+
+                </li>
+
+                <li>
+
+                    <span class="icon">✓</span>
+
+                    Banyak pilihan kustomisasi tim.
+
+                </li>
+
+            </ul>
+
+        </article>
+
+        <article class="update-card">
+
+            <div class="card-head">
+
+                <span class="number">05</span>
+
+                <h2>Kekurangan</h2>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="feature-list">
+
+                <li>
+
+                    <span class="icon">!</span>
+
+                    Membutuhkan koneksi internet.
+
+                </li>
+
+                <li>
+
+                    <span class="icon">!</span>
+
+                    Beberapa mode masih perlu peningkatan.
+
+                </li>
+
+                <li>
+
+                    <span class="icon">!</span>
+
+                    Tutorial masih kurang lengkap.
+
+                </li>
+
+            </ul>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<style>.update-section{
+
+    padding:70px 0;
+
+}
+
+.update-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+
+}
+
+.update-card{
+
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
+    padding:38px;
+
+}
+
+.card-head{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+}
+
+.number{
+
+    width:46px;
+    height:46px;
+
+    display:grid;
+    place-items:center;
+
+    background:color-mix(in srgb,var(--primary) 12%,var(--surface));
+    color:var(--primary);
+
+    border-radius:12px;
+
+    font-weight:700;
+
+}
+
+.card-head h2{
+
+    margin:0;
+
+    color:var(--text);
+
+    font-size:2rem;
+
+}
+
+.divider{
+
+    height:1px;
+
+    background:color-mix(in srgb,var(--primary) 25%,var(--border));
+
+    margin:24px 0;
+
+}
+
+.update-card p{
+
+    margin:0;
+
+    color:var(--text-secondary);
+
+    line-height:2;
+
+    font-size:1.05rem;
+
+}
+
+.feature-list{
+
+    list-style:none;
+
+    margin:0;
+    padding:0;
+
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+
+}
+
+.feature-list li{
+
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+
+    padding:18px 20px;
+
+    background:var(--surface-hover);
+
+    border-radius:var(--radius);
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+.icon{
+
+    flex:none;
+
+    width:28px;
+    height:28px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:var(--surface);
+
+    font-weight:700;
+
+    font-size:.9rem;
+
+}
+
+@media(max-width:900px){
+
+.update-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+</style>
+</MainLayout>
