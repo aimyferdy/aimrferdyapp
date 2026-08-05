@@ -27,241 +27,35 @@ const pageDescription =
   canonical={SITE.url()}
 >
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
+ <section class="attendance-hero"><div class="attendance-hero__grid"><div class="attendance-hero__content"><p class="attendance-hero__eyebrow"><span></span> SISTEM AI MR FERDY DIGITAL </p><h1> Sistem Ai Mr Ferdy <strong>Real-Time</strong> untuk Gamer yang Lebih Efisien </h1><p class="attendance-hero__description"> Kelola game, pantau permainan, dan akses laporan presensi secara cepat melalui sistem digital modern yang mudah digunakan. </p><div class="attendance-hero__actions"><a href="/presensi" class="attendance-btn attendance-btn--primary" ><span>✓</span> MULAI AI MR FERDY </a><a href="#fitur" class="attendance-btn attendance-btn--secondary" > LIHAT FITUR <span>→</span></a></div><div class="attendance-stats"><div class="attendance-stat"><strong> REAL-TIME </strong><span> DATA permainan </span></div><div class="attendance-stat"><strong> 24/7 </strong><span> AKSES SISTEM </span></div><div class="attendance-stat"><strong> DIGITAL </strong><span> LAPORAN OTOMATIS </span></div></div></div><div class="attendance-clock-area"><div class="attendance-clock-shell"><div class="attendance-clock"><div class="attendance-clock__ticks"></div><span class="attendance-clock__number number-12"> 12 </span><span class="attendance-clock__number number-3"> 03 </span><span class="attendance-clock__number number-6"> 06 </span><span class="attendance-clock__number number-9"> 09 </span><div class="attendance-hand attendance-hand--hour" id="hourHand" ></div><div class="attendance-hand attendance-hand--minute" id="minuteHand" ></div><div class="attendance-hand attendance-hand--second" id="secondHand" ></div><div class="attendance-clock__center"></div></div><div class="attendance-digital"><div class="attendance-digital__time" id="digitalTime" > 00:00:00 </div><div class="attendance-digital__date" id="digitalDate" > MEMUAT TANGGAL </div></div></div></div></div></section>
 
-      <div class="hero-grid">
+<style>
+.attendance-hero{position:relative;width:100%;min-height:680px;display:flex;align-items:center;overflow:hidden;padding:50px 20px;color:var(--text);background:radial-gradient(circle at 82% 45%,color-mix(in srgb,var(--primary) 10%,transparent),transparent 35%),var(--bg);transition:background var(--transition),color var(--transition)}.attendance-hero::before{content:"";position:absolute;width:650px;height:650px;right:-260px;top:50%;transform:translateY(-50%);border:1px solid color-mix(in srgb,var(--primary) 18%,transparent);border-radius:50%;pointer-events:none}.attendance-hero::after{content:"";position:absolute;width:470px;height:470px;right:-165px;top:50%;transform:translateY(-50%);border:1px solid color-mix(in srgb,var(--primary) 12%,transparent);border-radius:50%;pointer-events:none}.attendance-hero__grid{position:relative;z-index:2;width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);align-items:center;gap:60px}.attendance-hero__content{max-width:680px}.attendance-hero__eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;color:var(--primary);font-size:11px;font-weight:800;letter-spacing:2px}.attendance-hero__eyebrow span{width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 10px color-mix(in srgb,var(--primary) 55%,transparent)}.attendance-hero h1{max-width:720px;margin:0;color:var(--text);font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.1;letter-spacing:-2px}.attendance-hero h1 strong{color:var(--primary)}.attendance-hero__description{max-width:610px;margin-top:23px;color:var(--text-secondary);font-size:16px;line-height:1.8}.attendance-hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.attendance-btn{min-height:50px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #fff0;border-radius:calc(var(--radius) - 3px);font-size:12px;font-weight:800;letter-spacing:.7px;transition:transform var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition)}.attendance-btn--primary{color:#fff;background:var(--primary);box-shadow:0 7px 20px color-mix(in srgb,var(--primary) 25%,transparent)}html[data-theme="dark"] .attendance-btn--primary{color:#202124}.attendance-btn--primary:hover{transform:translateY(-3px);box-shadow:0 10px 26px color-mix(in srgb,var(--primary) 38%,transparent)}.attendance-btn--secondary{color:var(--text);border-color:var(--border);background:var(--surface)}.attendance-btn--secondary:hover{transform:translateY(-3px);border-color:var(--primary);background:var(--surface-hover)}.attendance-stats{display:flex;flex-wrap:wrap;gap:25px;margin-top:40px}.attendance-stat{padding-left:13px;border-left:3px solid var(--primary)}.attendance-stat strong{display:block;color:var(--text);font-size:17px;line-height:1.3}.attendance-stat span{display:block;margin-top:3px;color:var(--text-secondary);font-size:9px;font-weight:700;letter-spacing:1px}.attendance-clock-area{display:flex;align-items:center;justify-content:center}.attendance-clock-shell{position:relative;width:410px;height:410px;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--primary) 30%,var(--border));border-radius:50%;background:color-mix(in srgb,var(--surface) 65%,transparent);box-shadow:var(--shadow)}.attendance-clock-shell::before{content:"";position:absolute;width:338px;height:338px;border:1px solid color-mix(in srgb,var(--primary) 18%,transparent);border-radius:50%}.attendance-clock-shell::after{content:"";position:absolute;width:370px;height:370px;border-top:2px solid var(--primary);border-right:2px solid #fff0;border-radius:50%;transform:rotate(-42deg);opacity:.55}.attendance-clock{position:relative;z-index:2;width:275px;height:275px;border:1px solid var(--border);border-radius:50%;background:var(--surface);box-shadow:inset 0 0 28px color-mix(in srgb,var(--primary) 7%,transparent)}.attendance-clock__ticks{position:absolute;inset:7px;border-radius:50%;background:repeating-conic-gradient(from 0deg,var(--primary) 0deg 1deg,transparent 1deg 6deg);opacity:.28;-webkit-mask:radial-gradient(transparent 0 89%,#000 90%);mask:radial-gradient(transparent 0 89%,#000 90%)}.attendance-clock__number{position:absolute;z-index:4;color:var(--text-secondary);font-size:10px;font-weight:800}.number-12{top:27px;left:50%;transform:translateX(-50%)}.number-3{top:50%;right:25px;transform:translateY(-50%)}.number-6{bottom:27px;left:50%;transform:translateX(-50%)}.number-9{top:50%;left:25px;transform:translateY(-50%)}.attendance-hand{position:absolute;z-index:5;left:50%;bottom:50%;transform:translateX(-50%) rotate(0deg);transform-origin:bottom center;border-radius:10px}.attendance-hand--hour{width:4px;height:65px;background:var(--text)}.attendance-hand--minute{width:3px;height:88px;background:var(--primary)}.attendance-hand--second{width:1px;height:98px;background:var(--primary);opacity:.7}.attendance-clock__center{position:absolute;z-index:7;top:50%;left:50%;width:12px;height:12px;transform:translate(-50%,-50%);border:2px solid var(--surface);border-radius:50%;background:var(--primary);box-shadow:0 0 12px color-mix(in srgb,var(--primary) 55%,transparent)}.attendance-digital{position:absolute;z-index:8;bottom:-45px;width:275px;padding:12px 15px;text-align:center;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}.attendance-digital__time{color:var(--text);font-family:"Courier New",monospace;font-size:31px;font-weight:500;letter-spacing:4px;line-height:1.2}.attendance-digital__date{margin-top:6px;color:var(--primary);font-size:8px;font-weight:800;letter-spacing:1.4px}@media(max-width:900px){.attendance-hero{min-height:auto;padding:75px 20px 110px}.attendance-hero__grid{grid-template-columns:1fr;text-align:center;gap:70px}.attendance-hero__content{max-width:750px;margin:auto}.attendance-hero__description{margin-left:auto;margin-right:auto}.attendance-hero__actions,.attendance-stats{justify-content:center}}@media(max-width:600px){.attendance-hero{padding:60px 14px 100px}.attendance-hero h1{font-size:38px;letter-spacing:-1.2px}.attendance-hero__description{font-size:14px}.attendance-hero__actions{display:grid;grid-template-columns:1fr}.attendance-btn{width:100%}.attendance-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:left}.attendance-stat{padding-left:8px}.attendance-stat strong{font-size:13px}.attendance-stat span{font-size:7px;letter-spacing:.5px}.attendance-clock-shell{width:330px;height:330px}.attendance-clock-shell::before{width:270px;height:270px}.attendance-clock-shell::after{width:295px;height:295px}.attendance-clock{width:225px;height:225px}.attendance-hand--hour{height:52px}.attendance-hand--minute{height:72px}.attendance-hand--second{height:80px}.attendance-digital{width:245px;bottom:-48px}.attendance-digital__time{font-size:27px}.number-12{top:22px}.number-6{bottom:22px}.number-3{right:20px}.number-9{left:20px}}
+</style>
 
-        <div class="hero-left">
+<main class="container-page">
+<section class="home-section about-section" aria-labelledby="about-title"><h2 id="about-title">Mengenal AI MR FERDY</h2><p> Nama <strong>AI MR FERDY</strong> merupakan identitas brand aplikasi berbasis smart artificial intelligence yang menggabungkan teknologi pemrosesan informasi dengan pengalaman pengguna digital. </p><p> Bagian <strong>AI</strong> menggambarkan teknologi kecerdasan buatan yang menjadi dasar dalam pengembangan aplikasi. </p><p> Bagian <strong>MR FERDY</strong> menjadi identitas brand yang memberikan karakter dan ciri khas tersendiri. </p><p> Gabungan keduanya membentuk identitas digital yang mudah dikenali: <strong>AI MR FERDY</strong>. </p></section><section class="home-section concept-section" aria-labelledby="concept-title"><h2 id="concept-title">Konsep AI MR FERDY</h2><p> AI MR FERDY dibangun berdasarkan konsep sederhana: </p><p class="highlight-text"><strong> Teknologi pintar yang dibuat lebih dekat dengan manusia. </strong></p><p> Sebuah aplikasi AI tidak hanya dinilai dari teknologi yang digunakan, tetapi juga dari bagaimana pengguna dapat memanfaatkannya dalam aktivitas digital sehari-hari. </p><p> Karena itu, AI MR FERDY mengutamakan: </p><ul class="feature-list"><li> Pengalaman pengguna yang mudah dipahami. </li><li> Interaksi digital yang praktis. </li><li> Penyajian informasi yang lebih terstruktur. </li><li> Pengembangan teknologi yang mengikuti kebutuhan pengguna. </li></ul></section><section class="home-section feature-section" aria-labelledby="feature-title"><h2 id="feature-title">Fitur AI MR FERDY</h2><div class="feature-grid"><article class="feature-card"><h3>Smart AI Assistant</h3><p> AI MR FERDY menghadirkan pengalaman interaksi berbasis AI yang membantu pengguna memperoleh dukungan digital secara lebih cepat dan praktis. </p></article><article class="feature-card"><h3>Intelligent Response</h3><p> Sistem AI dirancang untuk memahami permintaan pengguna dan memberikan respons yang relevan sesuai konteks. </p></article><article class="feature-card"><h3>Digital Interaction</h3><p> AI MR FERDY menghadirkan cara baru untuk berinteraksi dengan teknologi melalui pengalaman digital yang lebih modern. </p></article><article class="feature-card"><h3>User-Friendly Experience</h3><p> Teknologi dirancang agar tetap mudah digunakan tanpa memerlukan pemahaman teknis yang kompleks. </p></article></div></section><section class="home-section process-section" aria-labelledby="process-title"><h2 id="process-title">Bagaimana AI MR FERDY Bekerja?</h2><p> AI MR FERDY bekerja melalui proses interaksi antara pengguna dan sistem smart AI. </p><ol class="process-list"><li> Pengguna memberikan perintah atau pertanyaan. </li><li> Sistem memahami permintaan yang diberikan. </li><li> Teknologi AI memproses informasi. </li><li> Sistem memberikan respons yang relevan. </li></ol><p> Proses tersebut membantu membuat interaksi dengan teknologi menjadi lebih sederhana, cepat, dan efisien. </p></section><section class="home-section advantage-section" aria-labelledby="advantage-title"><h2 id="advantage-title">Keunggulan AI MR FERDY</h2><div class="feature-grid"><article class="feature-card"><h3>Identitas Brand yang Unik</h3><p> AI MR FERDY memiliki nama dan karakter tersendiri sebagai brand teknologi digital. </p></article><article class="feature-card"><h3>Pendekatan Smart AI</h3><p> Menggunakan konsep kecerdasan buatan untuk menghadirkan pengalaman digital yang lebih modern. </p></article><article class="feature-card"><h3>Fokus pada Pengguna</h3><p> AI MR FERDY mengutamakan kemudahan penggunaan tanpa mengabaikan perkembangan teknologi. </p></article><article class="feature-card"><h3>Siap Berkembang</h3><p> Sebagai brand digital, AI MR FERDY dapat terus berkembang mengikuti perubahan teknologi dan kebutuhan pengguna. </p></article></div></section><section class="home-section digital-section" aria-labelledby="digital-title"><h2 id="digital-title">AI MR FERDY dan Dunia Digital</h2><p> Perkembangan teknologi AI membuka banyak peluang baru dalam dunia digital. </p><p> AI MR FERDY hadir sebagai bagian dari perkembangan tersebut dengan membawa pendekatan yang mengutamakan kemudahan, kreativitas, dan pengalaman pengguna. </p><p> Teknologi bukan hanya tentang mesin yang semakin pintar, tetapi juga tentang bagaimana manusia dapat memanfaatkannya dengan lebih baik. </p></section><section class="home-section why-section" aria-labelledby="why-title"><h2 id="why-title">Mengapa AI MR FERDY?</h2><p class="highlight-text"><strong> Karena teknologi terbaik adalah teknologi yang terasa mudah digunakan. </strong></p><p> AI MR FERDY membawa konsep smart AI yang menghubungkan kecerdasan teknologi dengan kebutuhan pengguna modern. </p></section><section class="home-section faq-section" aria-labelledby="faq-title"><h2 id="faq-title">FAQ AI MR FERDY</h2><div class="faq-list"><article class="faq-item"><h3>Apa itu AI MR FERDY?</h3><p> AI MR FERDY adalah brand aplikasi smart AI yang menggunakan teknologi kecerdasan buatan untuk menghadirkan pengalaman digital yang lebih interaktif. </p></article><article class="faq-item"><h3>Apakah AI MR FERDY merupakan aplikasi AI?</h3><p> Ya, AI MR FERDY dikembangkan sebagai aplikasi berbasis smart artificial intelligence. </p></article><article class="faq-item"><h3>Apa fungsi AI MR FERDY?</h3><p> AI MR FERDY memanfaatkan teknologi AI untuk membantu pengguna dalam aktivitas berbasis informasi dan interaksi digital. </p></article><article class="faq-item"><h3>Mengapa nama AI MR FERDY digunakan?</h3><p> AI MR FERDY merupakan identitas brand yang menggabungkan konsep artificial intelligence dengan nama unik yang mudah dikenali. </p></article></div></section><section class="home-section about-brand-section" aria-labelledby="brand-title"><h2 id="brand-title">Tentang AI MR FERDY</h2><p> AI MR FERDY merupakan brand digital yang berfokus pada pengembangan pengalaman berbasis smart AI. </p><p> Dengan menggabungkan teknologi dan kemudahan penggunaan, AI MR FERDY bertujuan menghadirkan interaksi digital yang lebih modern, praktis, dan mudah diakses oleh pengguna. </p></section><section class="faq" id="faq"><h2>FAQ AI MR FERDY</h2><details><summary>Apa itu AI MR FERDY?</summary><div class="faq-content"><p> AI MR FERDY adalah sebuah brand aplikasi smart AI yang menghadirkan teknologi kecerdasan buatan untuk pengalaman digital yang lebih interaktif, praktis, dan modern. </p></div></details><details><summary>Apakah AI MR FERDY merupakan aplikasi AI?</summary><div class="faq-content"><p> Ya, AI MR FERDY dikembangkan sebagai aplikasi berbasis smart artificial intelligence yang mengutamakan kemudahan penggunaan. </p></div></details><details><summary>Apa fungsi AI MR FERDY?</summary><div class="faq-content"><p> AI MR FERDY berfungsi sebagai aplikasi digital berbasis AI yang membantu pengguna melakukan interaksi dan mendapatkan informasi melalui teknologi cerdas. </p></div></details><details><summary>Bagaimana cara menggunakan AI MR FERDY?</summary><div class="faq-content"><p> Pengguna dapat mengakses AI MR FERDY melalui platform yang tersedia kemudian menggunakan fitur interaksi AI sesuai kebutuhan. </p></div></details><details><summary>Apakah AI MR FERDY menggunakan teknologi kecerdasan buatan?</summary><div class="faq-content"><p> Ya, AI MR FERDY menggunakan konsep artificial intelligence sebagai dasar untuk menghadirkan pengalaman digital yang lebih cerdas. </p></div></details></section>
+<style>
+.faq{width:100%;margin:40px auto;color:var(--text)}.faq h2{margin:0 0 20px;color:var(--text);font-size:clamp(1.6rem, 4vw, 2rem);font-weight:800;line-height:1.3;text-align:center}.faq details{margin-bottom:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:background var(--transition),border-color var(--transition),box-shadow var(--transition)}.faq details:hover{border-color:var(--primary)}.faq details[open]{background:var(--surface-hover);border-color:var(--primary);box-shadow:var(--shadow)}.faq summary{position:relative;padding:18px 56px 18px 20px;color:var(--text);cursor:pointer;list-style:none;font-size:1rem;font-weight:700;line-height:1.55;transition:color var(--transition),background var(--transition)}.faq summary::-webkit-details-marker{display:none}.faq summary:hover{color:var(--primary)}.faq summary::after{content:"+";position:absolute;top:50%;right:20px;display:grid;place-items:center;width:30px;height:30px;color:var(--primary);background:var(--surface-hover);border:1px solid var(--border);border-radius:50%;font-size:1.3rem;font-weight:500;line-height:1;transform:translateY(-50%);transition:color var(--transition),background var(--transition),border-color var(--transition),transform var(--transition)}.faq details[open] summary::after{content:"−";color:var(--surface);background:var(--primary);border-color:var(--primary)}.faq-content{padding:0 20px 20px;color:var(--text-secondary);font-size:1rem;line-height:1.8}.faq-content p{margin:0}.faq summary:focus-visible{outline:2px solid var(--primary);outline-offset:-2px}@media (max-width:768px){.faq{margin:32px auto}.faq h2{font-size:1.65rem}.faq summary{padding:16px 54px 16px 18px}.faq-content{padding:0 18px 18px}}@media (max-width:480px){.faq{margin:24px auto}.faq h2{margin-bottom:16px;font-size:1.45rem;text-align:left}.faq details{margin-bottom:10px;border-radius:var(--radius)}.faq summary{padding:15px 50px 15px 16px;font-size:.95rem;line-height:1.5}.faq summary::after{right:14px;width:28px;height:28px;font-size:1.15rem}.faq-content{padding:0 16px 16px;font-size:.94rem;line-height:1.75}}
+</style>
 
-          <div class="hero-tag">
-            AI • SEO • AUTOMATION
-          </div>
 
-          <h1>
-            Ai Mr Ferdy
-          </h1>
+<div class="rb-wrap"><div class="rb-card"><div class="rb-quote">❝</div><div class="rb-text"> ${sitename} memiliki tampilan yang sederhana dan mudah dipahami. Saya suka karena fitur ${sitename} mudah digunakan sehingga pengalaman berinteraksi dengan smart AI terasa lebih praktis. </div><div class="rb-footer"> Siti – 29 April 2026 (Android) </div></div><div class="rb-card"><div class="rb-quote">❝</div><div class="rb-text"> Menggunakan ${sitename} terasa nyaman karena sistemnya responsif dan mudah dipelajari. Aplikasi ini membantu saya memahami teknologi AI tanpa harus menggunakan proses yang rumit. </div><div class="rb-footer"> Rahmadani, Denpasar – 3 Juni 2026 (Android) </div></div><div class="rb-card"><div class="rb-quote">❝</div><div class="rb-text"> Saya mencoba beberapa fitur ${sitename} dan pengalaman penggunaannya cukup praktis. Tampilan yang bersih membuat proses berinteraksi dengan AI menjadi lebih mudah. </div><div class="rb-footer"> Agung, Jakarta – 5 Juni 2026 (Android) </div></div><div class="rb-card"><div class="rb-quote">❝</div><div class="rb-text"> Salah satu hal yang menarik dari ${sitename} adalah konsep smart AI yang terus berkembang. Pembaruan fitur membuat pengalaman menggunakan aplikasi terasa lebih modern dan mengikuti perkembangan teknologi. </div><div class="rb-footer"> Asep, Surabaya – 7 Juni 2026 (Android) </div></div></div>
 
-          <p>
-            AI developer Indonesia yang membangun aplikasi AI,
-            SEO systems, automation tools dan platform digital modern
-            untuk bisnis, creator dan internet ecosystem modern.
-          </p>
+</main>
+<style>
+.rb-wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;width:100%;margin:32px 0}.rb-card{position:relative;display:flex;flex-direction:column;min-height:220px;padding:28px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;transition:transform var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition)}.rb-card:hover{transform:translateY(-5px);background:var(--surface-hover);border-color:var(--primary);box-shadow:0 10px 28px rgb(0 0 0 / .14)}.rb-quote{display:flex;align-items:center;justify-content:center;width:48px;height:48px;margin-bottom:18px;color:#fff;background:var(--primary);border-radius:50%;font-family:Georgia,serif;font-size:2.2rem;font-weight:800;line-height:1;transition:transform var(--transition),background var(--transition)}.rb-card:hover .rb-quote{transform:rotate(8deg) scale(1.06)}.rb-text{flex:1;margin-bottom:24px;color:var(--text-secondary);font-size:1rem;line-height:1.8}.rb-footer{padding-top:16px;color:var(--text);border-top:1px solid var(--border);font-size:.88rem;font-weight:600;line-height:1.6}@media (max-width:768px){.rb-wrap{grid-template-columns:1fr;gap:16px;margin:24px 0}.rb-card{min-height:auto;padding:24px}}@media (max-width:480px){.rb-wrap{gap:14px;margin:20px 0}.rb-card{padding:20px;border-radius:var(--radius)}.rb-quote{width:42px;height:42px;margin-bottom:16px;font-size:2rem}.rb-text{margin-bottom:20px;font-size:.96rem;line-height:1.75}.rb-footer{padding-top:14px;font-size:.82rem}}
+</style>
 
-          <div class="hero-btns">
+<section class="footer-cta" aria-labelledby="footer-cta-title"><div class="footer-cta-content"><span class="footer-cta-label"> SMART AI EXPERIENCE </span><h2 id="footer-cta-title"> Jelajahi Pengalaman Digital Bersama AI MR FERDY </h2><p> Temukan informasi, fitur, dan pengalaman teknologi AI yang lebih praktis, modern, interaktif, dan mudah dipahami. </p><div class="footer-cta-actions"><a href="/" class="footer-cta-btn footer-cta-btn-primary" aria-label="Mulai menjelajahi AI MR FERDY" > Mulai Jelajahi </a><a href="/tentang" class="footer-cta-btn footer-cta-btn-secondary" aria-label="Pelajari lebih lanjut tentang AI MR FERDY" > Pelajari Lebih Lanjut </a></div></div>
+</section>
+<style>
+.footer-cta{width:100%;max-width:1200px;margin:48px auto 0;padding:0 24px;box-sizing:border-box}.footer-cta-content{position:relative;padding:60px 40px;text-align:center;background:linear-gradient(135deg,var(--primary),var(--surface-hover));border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;transition:border-color var(--transition),box-shadow var(--transition)}.footer-cta-content::before{content:"";position:absolute;top:-120px;right:-100px;width:260px;height:260px;background:var(--surface);border-radius:50%;opacity:.12;pointer-events:none}.footer-cta-content::after{content:"";position:absolute;bottom:-140px;left:-100px;width:300px;height:300px;background:var(--surface);border-radius:50%;opacity:.1;pointer-events:none}.footer-cta-label,.footer-cta h2,.footer-cta p,.footer-cta-actions{position:relative;z-index:1}.footer-cta-label{display:inline-flex;margin-bottom:16px;padding:8px 14px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:999px;font-size:.75rem;font-weight:800;letter-spacing:.1em}.footer-cta h2{max-width:800px;margin:0 auto 18px;color:var(--text);font-size:clamp(1.9rem, 4vw, 3.1rem);font-weight:800;line-height:1.2}.footer-cta p{max-width:720px;margin:0 auto;color:var(--text-secondary);font-size:1.05rem;line-height:1.8}.footer-cta-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:30px}.footer-cta-btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border:1px solid #fff0;border-radius:var(--radius);font-size:.95rem;font-weight:700;text-decoration:none;transition:transform var(--transition),box-shadow var(--transition),background var(--transition)}.footer-cta-btn-primary{color:var(--surface);background:var(--text);border-color:var(--text)}.footer-cta-btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.footer-cta-btn-secondary{color:var(--text);background:var(--surface);border-color:var(--border)}.footer-cta-btn-secondary:hover{transform:translateY(-3px);border-color:var(--text)}
+</style>
 
-            <a
-              href="https://aimrferdy.app"
-              class="btn btn-primary"
-            >
-              Official Website
-            </a>
 
-            <a
-              href="https://news.aimrferdy.app"
-              class="btn btn-secondary"
-            >
-              Latest Articles
-            </a>
 
-          </div>
 
-        </div>
-
-        <div class="hero-right">
-
-          <div class="hero-card">
-
-            <div class="hero-badge">
-              AI SYSTEMS
-            </div>
-
-            <h3>
-              Modern AI Solutions
-            </h3>
-
-            <p>
-              AI tools, smart automation dan digital workflow modern
-              untuk produktivitas dan bisnis online.
-            </p>
-
-          </div>
-
-          <div class="hero-card">
-
-            <div class="hero-badge">
-              SEO PERFORMANCE
-            </div>
-
-            <h3>
-              Fast & Optimized
-            </h3>
-
-            <p>
-              Website ultra cepat, mobile first dan optimized
-              untuk modern search engine.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- MAIN ECOSYSTEM -->
-  <section class="section">
-    <div class="container">
-
-      <h2 class="section-title">
-        AI Tools & Digital Ecosystem
-      </h2>
-
-      <p class="section-desc">
-        Platform, tools dan website utama dalam ecosystem Ai Mr Ferdy.
-      </p>
-
-      <div class="pricing">
-
-        <div class="price-card">
-
-          <h3>
-            Official Website
-          </h3>
-
-          <p>
-            Website utama Ai Mr Ferdy untuk platform digital modern.
-          </p>
-
-          <a
-            href="https://aimrferdy.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Visit Website
-          </a>
-
-        </div>
-
-        <div class="price-card">
-
-          <h3>
-            News & Articles
-          </h3>
-
-          <p>
-            Artikel AI, SEO, automation dan teknologi modern terbaru.
-          </p>
-
-          <a
-            href="https://news.aimrferdy.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Open News
-          </a>
-
-        </div>
-
-        <div class="price-card">
-
-          <h3>
-            AI Tools
-          </h3>
-
-          <p>
-            Tools digital modern, utility online dan automation systems.
-          </p>
-
-          <a
-            href="https://tools.aimrferdy.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Open Tools
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section">
-    <div class="container">
-
-      <h2 class="section-title">
-        AI & Digital Services
-      </h2>
-
-      <p class="section-desc">
-        Fokus pada AI systems, SEO technology dan digital platform modern.
-      </p>
-
-      <div class="features">
-
-        <div class="feature-card">
-
-          <h3>
-            AI Projects
-          </h3>
-
-          <p>
-            AI applications, smart systems dan automation workflow modern.
-          </p>
-
-        </div>
-
-        <div class="feature-card">
-
-          <h3>
-            SEO Systems
-          </h3>
-
-          <p>
-            Website optimized, scalable dan search engine friendly.
-          </p>
-
-        </div>
-
-        <div class="feature-card">
-
-          <h3>
-            Modern UI
-          </h3>
-
-          <p>
-            Clean interface, ultra fast performance dan mobile first design.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LATEST ARTICLES -->
-<!-- LATEST ARTICLES -->
-<section class="section">
-
-  <div class="container">
-
-    <h2 class="section-title">
-      Latest AI Articles
-    </h2>
-
-    <p class="section-desc">
-      Artikel terbaru tentang AI, SEO dan teknologi modern.
-    </p>
 
     <div class="blog-grid">
 
