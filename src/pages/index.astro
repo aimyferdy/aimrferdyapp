@@ -3,8 +3,16 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { SITE } from '../lib/site';
 import "../styles/blog.css";
 import "../styles/homepage.css";
-import { getCollection } from 'astro:content';
 
+
+import Hero from "../components/home/Hero.astro";
+import Featured from "../components/home/Featured.astro";
+import Latest from "../components/home/Latest.astro";
+import Categories from "../components/home/Categories.astro";
+import FAQ from "../components/home/FAQ.astro";
+import CTA from "../components/home/CTA.astro";
+
+import { getCollection } from 'astro:content';
 let posts = await getCollection('blog');
 
 const latestPosts = [...posts]
@@ -40,7 +48,18 @@ const pageDescription =
 const hourHand=document.getElementById("hourHand");const minuteHand=document.getElementById("minuteHand");const secondHand=document.getElementById("secondHand");const digitalTime=document.getElementById("digitalTime");const digitalDate=document.getElementById("digitalDate");function pad(number){return String(number).padStart(2,"0")}
 function updateAttendanceClock(){const now=new Date();const hours=now.getHours();const minutes=now.getMinutes();const seconds=now.getSeconds();const hourDegree=(hours%12)*30+minutes*0.5;const minuteDegree=minutes*6+seconds*0.1;const secondDegree=seconds*6;hourHand.style.transform="translateX(-50%) rotate("+hourDegree+"deg)";minuteHand.style.transform="translateX(-50%) rotate("+minuteDegree+"deg)";secondHand.style.transform="translateX(-50%) rotate("+secondDegree+"deg)";digitalTime.textContent=pad(hours)+":"+pad(minutes)+":"+pad(seconds);digitalDate.textContent=new Intl.DateTimeFormat("id-ID",{weekday:"long",day:"2-digit",month:"long",year:"numeric"}).format(now).toUpperCase()}
 updateAttendanceClock();setInterval(updateAttendanceClock,1000)
-
 </script>
+
+
+
+  <Featured />
+
+  <Latest posts={latestPosts} />
+
+  <Categories />
+
+  <FAQ />
+
+  <CTA />
 
 </MainLayout>
