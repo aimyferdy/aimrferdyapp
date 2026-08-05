@@ -1,1 +1,64 @@
+---
+import { SITE } from "../../lib/site";
 
+const { posts = [] } = Astro.props;
+---
+
+<section class="featured home-section">
+
+  <div class="home-header">
+    <span class="home-label">Featured Articles</span>
+
+    <h2>AI Research & Productivity Guides</h2>
+
+    <p>
+      Artikel pilihan AI Mr Ferdy yang membahas artificial intelligence,
+      penelitian, SEO, produktivitas, dan teknologi digital modern.
+    </p>
+  </div>
+
+  <div class="featured-grid">
+
+    {
+      posts.map((post) => (
+
+        <article class="featured-card">
+
+          <a href={`/blog/${post.slug}/`}>
+
+            <figure class="featured-image">
+
+              <img
+                src={SITE.url(`/api/og/${post.slug}.svg`)}
+                alt={post.data.title}
+                loading="lazy"
+                width="1200"
+                height="630"
+              />
+
+            </figure>
+
+            <div class="featured-content">
+
+              <h3>{post.data.title}</h3>
+
+              {post.data.description && (
+                <p>{post.data.description}</p>
+              )}
+
+              <span class="featured-link">
+                Read Article →
+              </span>
+
+            </div>
+
+          </a>
+
+        </article>
+
+      ))
+    }
+
+  </div>
+
+</section>
