@@ -1,9 +1,9 @@
 export const SITE = {
   name: "Ai Mr Dennis",
 
-  title: "Ai Mr Dennis",
+  title: "AI Mr Ferdy — Smart Research Assistant",
 
-  description: "Ai Mr Dennis Website modern",
+  description: "AI Mr Ferdy adalah Smart Research Assistant berbasis AI yang membantu mahasiswa, peneliti, dan akademisi dalam menyusun proposal, meringkas jurnal, menganalisis data, membuat sitasi, serta mendukung proses penelitian dengan lebih efisien.",
 
   author: "OpenPobo",
 
