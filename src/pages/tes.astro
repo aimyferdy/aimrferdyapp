@@ -145,21 +145,28 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 <style>
 .hero-app{
+
     padding:70px 0;
 
     background:
         radial-gradient(
-            circle at 70% 30%,
-            color-mix(in srgb, var(--primary) 25%, transparent),
+            circle at top right,
+            color-mix(in srgb,var(--surface) 18%,transparent),
             transparent 45%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            color-mix(in srgb,var(--text) 12%,transparent),
+            transparent 55%
         ),
         linear-gradient(
             135deg,
-            color-mix(in srgb, var(--primary) 75%, var(--text)),
+            color-mix(in srgb,var(--primary) 70%,var(--text)),
             var(--primary)
         );
 
     color:var(--surface);
+
 }
 
 .hero-grid{
@@ -420,17 +427,22 @@ import MainLayout from '../layouts/MainLayout.astro';
 
 .hero-grid{
 
-grid-template-columns:1fr;
+        grid-template-columns:1fr;
 
-}
+    }
 
-.download-card{
+    .download-card{
 
-max-width:480px;
+        order:-1;
 
-margin:auto;
+        max-width:500px;
 
-}
+        width:100%;
+
+        margin:0 auto;
+
+    }
+
 
 .hero-info{
 
