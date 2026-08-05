@@ -1,0 +1,244 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout>
+<section class="popular-app">
+
+    <div class="section-title">
+
+        <span class="number">08</span>
+
+        <h2>Aplikasi Populer</h2>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="popular-grid">
+
+        <a href="#" class="popular-card">
+
+            <img src="images/logo.webp" alt="">
+
+            <h3>Ai Mr Ferdy - Gameplay Menegangkan dalam FPS yang Seru</h3>
+
+            <p>Action · v5.4.2</p>
+
+            <span class="rating">★ 4.3</span>
+
+        </a>
+
+        <a href="#" class="popular-card">
+
+            <img src="images/logo.webp" alt="">
+
+            <h3>Ai Mr Ferdy</h3>
+
+            <p>Football · v5.4.2</p>
+
+            <span class="rating">★ 4.3</span>
+
+        </a>
+
+        <a href="#" class="popular-card">
+
+            <img src="images/logo.webp" alt="">
+
+            <h3>Ai Mr Ferdy</h3>
+
+            <p>Football · v5.4.2</p>
+
+            <span class="rating">★ 4.3</span>
+
+        </a>
+
+        <a href="#" class="popular-card">
+
+            <img src="images/logo.webp" alt="">
+
+            <h3>Ai Mr Ferdy - Game Sepak Bola Seru dan Menantang</h3>
+
+            <p>Football · v5.4.2</p>
+
+            <span class="rating">★ 4.3</span>
+
+        </a>
+
+    </div>
+
+</section>
+<style>
+.popular-app{
+
+    padding:36px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow);
+
+}
+
+.section-title{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.number{
+
+    width:40px;
+
+    height:40px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:12px;
+
+    background:color-mix(in srgb,var(--primary) 12%,var(--surface));
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.section-title h2{
+
+    margin:0;
+
+    color:var(--text);
+
+    font-size:2rem;
+
+}
+
+.divider{
+
+    height:1px;
+
+    margin:22px 0 24px;
+
+    background:color-mix(in srgb,var(--primary) 20%,var(--border));
+
+}
+
+.popular-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.popular-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:24px;
+
+    text-decoration:none;
+
+    background:color-mix(in srgb,var(--primary) 6%,var(--surface));
+
+    border:1px solid color-mix(in srgb,var(--primary) 15%,var(--border));
+
+    border-radius:var(--radius);
+
+    transition:var(--transition);
+
+}
+
+.popular-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.popular-card img{
+
+    width:58px;
+
+    height:58px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    margin-bottom:18px;
+
+    border:1px solid var(--border);
+
+}
+
+.popular-card h3{
+
+    margin:0 0 10px;
+
+    color:var(--text);
+
+    font-size:1.45rem;
+
+    line-height:1.6;
+
+}
+
+.popular-card p{
+
+    margin:0 0 12px;
+
+    color:var(--text-secondary);
+
+    font-size:.95rem;
+
+}
+
+.rating{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+@media(max-width:992px){
+
+    .popular-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:640px){
+
+    .popular-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+</style>
+</MainLayout>
