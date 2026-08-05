@@ -1,142 +1,97 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { SITE } from "../lib/config";
+
+const pageTitle =
+  "Privacy Policy - AI Mr Ferdy";
+
+const pageDescription =
+  "Read the AI Mr Ferdy Privacy Policy to learn how we collect, use, protect, and manage information while providing AI-powered tools and digital services.";
 ---
 
 <MainLayout
-  title="Privacy Policy - Ai Mr Ferdy"
-  description="Kebijakan privasi Ai Mr Ferdy mengenai penggunaan data dan informasi pengguna."
+  title={pageTitle}
+  description={pageDescription}
+  canonical={`${SITE.url()}/privacy`}
 >
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-content">
-      <span class="badge">Privacy Policy</span>
 
-      <h1>Kebijakan Privasi Ai Mr Ferdy</h1>
+<section class="page-content">
 
-      <p>
-        Halaman ini menjelaskan bagaimana Ai Mr Ferdy
-        mengumpulkan, menggunakan, dan melindungi
-        informasi pengguna website.
-      </p>
-    </div>
-  </section>
+<h2>Privacy Policy</h2>
 
-  <!-- CONTENT -->
-  <section class="content-section">
-    <div class="container">
-      <div class="content-card">
-        <div class="content-block">
-          <h2>Informasi yang Dikumpulkan</h2>
+<p>
+Your privacy is important to us. This Privacy Policy explains how AI Mr Ferdy collects, uses, stores, and protects information when you access our website, AI-powered tools, and digital services. By using AI Mr Ferdy, you agree to the practices described in this policy.
+</p>
 
-          <p>
-            Kami dapat mengumpulkan beberapa informasi pengguna,
-            termasuk nama, email, nomor kontak,
-            atau informasi lain yang diberikan
-            melalui form konsultasi atau komunikasi langsung.
-          </p>
+<h2>Information We Collect</h2>
 
-          <p>
-            Selain itu, website dapat mengumpulkan data non-personal
-            seperti browser, perangkat, halaman yang dikunjungi,
-            dan aktivitas umum pengguna untuk kebutuhan analisis.
-          </p>
-        </div>
+<p>
+Depending on how you use our platform, we may collect certain information to improve performance, security, and user experience.
+</p>
 
-        <div class="content-block">
-          <h2>Penggunaan Informasi</h2>
+<ul>
+<li>Basic technical information such as browser type, operating system, and device information.</li>
+<li>Anonymous usage statistics to understand how visitors interact with our website.</li>
+<li>Information voluntarily submitted through contact forms or other interactive features.</li>
+<li>Cookies and similar technologies used to enhance functionality and analyze website performance.</li>
+</ul>
 
-          <p>
-            Informasi yang dikumpulkan digunakan untuk:
-          </p>
+<h2>How We Use Information</h2>
 
-          <ul>
-            <li>Memberikan layanan konsultasi digital</li>
-            <li>Menanggapi pertanyaan pengguna</li>
-            <li>Meningkatkan kualitas website dan layanan</li>
-            <li>Analisis performa dan pengalaman pengguna</li>
-            <li>Keperluan komunikasi dan support</li>
-          </ul>
-        </div>
+<p>
+Information collected may be used for the following purposes:
+</p>
 
-        <div class="content-block">
-          <h2>Perlindungan Data</h2>
+<ul>
+<li>Provide and improve AI-powered services.</li>
+<li>Maintain website security and reliability.</li>
+<li>Analyze website performance and user engagement.</li>
+<li>Respond to inquiries and support requests.</li>
+<li>Develop new features and improve existing tools.</li>
+</ul>
 
-          <p>
-            Ai Mr Ferdy berupaya menjaga keamanan informasi pengguna
-            dengan langkah yang wajar untuk mencegah
-            akses, penggunaan, atau perubahan data tanpa izin.
-          </p>
+<h2>Cookies</h2>
 
-          <p>
-            Namun, tidak ada metode transmisi data melalui internet
-            yang sepenuhnya aman sehingga kami tidak dapat
-            menjamin keamanan absolut.
-          </p>
-        </div>
+<p>
+AI Mr Ferdy may use cookies and similar technologies to remember user preferences, improve functionality, measure website performance, and provide a better browsing experience. Users may disable cookies through their browser settings, although some features may function differently.
+</p>
 
-        <div class="content-block">
-          <h2>Cookies</h2>
+<h2>Third-Party Services</h2>
 
-          <p>
-            Website ini dapat menggunakan cookies
-            untuk meningkatkan pengalaman pengguna,
-            analisis traffic, dan personalisasi konten.
-          </p>
+<p>
+Our website may use trusted third-party services such as analytics, hosting providers, or other infrastructure services that help operate the platform. These providers may process limited technical information solely for the purpose of delivering their services.
+</p>
 
-          <p>
-            Pengguna dapat memilih untuk menonaktifkan cookies
-            melalui pengaturan browser masing-masing.
-          </p>
-        </div>
+<h2>Data Security</h2>
 
-        <div class="content-block">
-          <h2>Tautan ke Website Lain</h2>
+<p>
+We implement reasonable technical and organizational measures to protect information from unauthorized access, disclosure, alteration, or destruction. However, no method of internet transmission or electronic storage is completely secure.
+</p>
 
-          <p>
-            Website Ai Mr Ferdy dapat berisi tautan
-            menuju website pihak ketiga.
-          </p>
+<h2>External Links</h2>
 
-          <p>
-            Kami tidak bertanggung jawab terhadap
-            kebijakan privasi atau isi website eksternal tersebut.
-          </p>
-        </div>
+<p>
+AI Mr Ferdy may contain links to external websites for additional resources or references. We are not responsible for the privacy practices or content of third-party websites.
+</p>
 
-        <div class="content-block">
-          <h2>Persetujuan Pengguna</h2>
+<h2>Children's Privacy</h2>
 
-          <p>
-            Dengan menggunakan website ini,
-            Anda dianggap menyetujui kebijakan privasi ini
-            beserta seluruh ketentuannya.
-          </p>
-        </div>
+<p>
+Our services are not specifically directed toward children. We do not knowingly collect personal information from children where prohibited by applicable laws.
+</p>
 
-        <div class="content-block">
-          <h2>Perubahan Kebijakan</h2>
+<h2>Policy Updates</h2>
 
-          <p>
-            Ai Mr Ferdy dapat memperbarui kebijakan privasi ini
-            sewaktu-waktu tanpa pemberitahuan sebelumnya.
-          </p>
+<p>
+This Privacy Policy may be updated from time to time to reflect changes in technology, legal requirements, or our services. Any updates will become effective immediately upon publication on this page.
+</p>
 
-          <p>
-            Pengguna disarankan untuk memeriksa halaman ini
-            secara berkala untuk mengetahui perubahan terbaru.
-          </p>
-        </div>
+<h2>Contact Us</h2>
 
-        <div class="content-block">
-          <h2>Kontak</h2>
+<p>
+If you have any questions regarding this Privacy Policy or how your information is handled, please contact us through the official contact page available on AI Mr Ferdy.
+</p>
 
-          <p>
-            Jika memiliki pertanyaan mengenai kebijakan privasi ini,
-            silakan hubungi Ai Mr Ferdy melalui halaman contact
-            atau email resmi kami.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+</section>
+
 </MainLayout>
