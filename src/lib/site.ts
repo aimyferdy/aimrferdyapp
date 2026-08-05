@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "Ai Mr Dennis",
+  name: "Ai Mr Ferdy",
 
   title: "AI Mr Ferdy — Smart Research Assistant",
 
