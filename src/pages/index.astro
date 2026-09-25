@@ -1,67 +1,155 @@
----
-import MainLayout from '../layouts/MainLayout.astro';
-import { SITE } from '../lib/site';
-import "../styles/blog.css";
-import "../styles/homepage.css";
 
-
-import Hero from "../components/home/Hero.astro";
-import Featured from "../components/home/Featured.astro";
-import Latest from "../components/home/Latest.astro";
-import Categories from "../components/home/Categories.astro";
-import FAQ from "../components/home/FAQ.astro";
-import CTA from "../components/home/CTA.astro";
-
-import { getCollection } from 'astro:content';
-let posts = await getCollection('blog');
-
-const latestPosts = [...posts]
-  .sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-  .slice(0, 3);
-
-const popularPosts = [...posts]
-  .filter((post) => post.data.popular)
-  .slice(0, 3);
-
-const pageTitle =
-  'Ai Mr Ferdy - AI Tools, SEO Systems & Digital Platform';
-
-const pageDescription =
-  'Ai Mr Ferdy membangun aplikasi AI, SEO systems, automation tools dan platform digital modern untuk bisnis, creator dan internet ecosystem.';
----
-
-<MainLayout
-  title={pageTitle}
-  description={pageDescription}
-  canonical={SITE.url()}
->
-
-<section class="attendance-hero">
-<div class="attendance-hero__grid"><div class="attendance-hero__content"><p class="attendance-hero__eyebrow"><span></span> SMART RESEARCH ASSISTANT </p><h1> AI Mr Ferdy <strong>Real-Time</strong> Smart Research Assistant </h1><p class="attendance-hero__description"> Platform AI yang membantu mahasiswa, peneliti, dan akademisi dalam menyusun proposal penelitian, meringkas jurnal, menganalisis data, membuat sitasi, serta meningkatkan produktivitas riset melalui berbagai tools berbasis kecerdasan buatan.</p><div class="attendance-hero__actions"><a href="/presensi" class="attendance-btn attendance-btn--primary" ><span>✓</span> LIHAT TOOLS </a><a href="#fitur" class="attendance-btn attendance-btn--secondary" > LIHAT FITUR <span>→</span></a></div><div class="attendance-stats"><div class="attendance-stat"><strong> REAL-TIME </strong><span> DATA permainan </span></div><div class="attendance-stat"><strong> 24/7 </strong><span> AI ASSISTANT </span></div><div class="attendance-stat"><strong> DIGITAL </strong><span> LAPORAN OTOMATIS </span></div></div></div><div class="attendance-clock-area"><div class="attendance-clock-shell"><div class="attendance-clock"><div class="attendance-clock__ticks"></div><span class="attendance-clock__number number-12"> 12 </span><span class="attendance-clock__number number-3"> 03 </span><span class="attendance-clock__number number-6"> 06 </span><span class="attendance-clock__number number-9"> 09 </span><div class="attendance-hand attendance-hand--hour" id="hourHand" ></div><div class="attendance-hand attendance-hand--minute" id="minuteHand" ></div><div class="attendance-hand attendance-hand--second" id="secondHand" ></div><div class="attendance-clock__center"></div></div><div class="attendance-digital"><div class="attendance-digital__time" id="digitalTime" > 00:00:00 </div><div class="attendance-digital__date" id="digitalDate" > RESEARCH • WRITING • PRODUCTIVITY </div></div></div></div></div>
-</section>
-
-
-
-<main>
-<div class="container">
-  <Featured />
-
-  <Latest posts={latestPosts} />
-
-  <Categories />
-
-  <FAQ />
-
-  <CTA />
-</div>
-</main>
-<style is:global>
-.attendance-hero{position:relative;width:100%;min-height:680px;display:flex;align-items:center;overflow:hidden;padding:50px 20px;color:var(--text);background:radial-gradient(circle at 82% 45%,color-mix(in srgb,var(--primary) 10%,transparent),transparent 35%),var(--bg);transition:background var(--transition),color var(--transition)}.attendance-hero::before{content:"";position:absolute;width:650px;height:650px;right:-260px;top:50%;transform:translateY(-50%);border:1px solid color-mix(in srgb,var(--primary) 18%,transparent);border-radius:50%;pointer-events:none}.attendance-hero::after{content:"";position:absolute;width:470px;height:470px;right:-165px;top:50%;transform:translateY(-50%);border:1px solid color-mix(in srgb,var(--primary) 12%,transparent);border-radius:50%;pointer-events:none}.attendance-hero__grid{position:relative;z-index:2;width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);align-items:center;gap:60px}.attendance-hero__content{max-width:680px}.attendance-hero__eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;color:var(--primary);font-size:11px;font-weight:800;letter-spacing:2px}.attendance-hero__eyebrow span{width:7px;height:7px;border-radius:50%;background:var(--primary);box-shadow:0 0 10px color-mix(in srgb,var(--primary) 55%,transparent)}.attendance-hero h1{max-width:720px;margin:0;color:var(--text);font-size:clamp(38px,5vw,64px);font-weight:800;line-height:1.1;letter-spacing:-2px}.attendance-hero h1 strong{color:var(--primary)}.attendance-hero__description{max-width:610px;margin-top:23px;color:var(--text-secondary);font-size:16px;line-height:1.8}.attendance-hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.attendance-btn{min-height:50px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #fff0;border-radius:calc(var(--radius) - 3px);font-size:12px;font-weight:800;letter-spacing:.7px;transition:transform var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition)}.attendance-btn--primary{color:#fff;background:var(--primary);box-shadow:0 7px 20px color-mix(in srgb,var(--primary) 25%,transparent)}html[data-theme="dark"] .attendance-btn--primary{color:#202124}.attendance-btn--primary:hover{transform:translateY(-3px);box-shadow:0 10px 26px color-mix(in srgb,var(--primary) 38%,transparent)}.attendance-btn--secondary{color:var(--text);border-color:var(--border);background:var(--surface)}.attendance-btn--secondary:hover{transform:translateY(-3px);border-color:var(--primary);background:var(--surface-hover)}.attendance-stats{display:flex;flex-wrap:wrap;gap:25px;margin-top:40px}.attendance-stat{padding-left:13px;border-left:3px solid var(--primary)}.attendance-stat strong{display:block;color:var(--text);font-size:17px;line-height:1.3}.attendance-stat span{display:block;margin-top:3px;color:var(--text-secondary);font-size:9px;font-weight:700;letter-spacing:1px}.attendance-clock-area{display:flex;align-items:center;justify-content:center}.attendance-clock-shell{position:relative;width:410px;height:410px;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--primary) 30%,var(--border));border-radius:50%;background:color-mix(in srgb,var(--surface) 65%,transparent);box-shadow:var(--shadow)}.attendance-clock-shell::before{content:"";position:absolute;width:338px;height:338px;border:1px solid color-mix(in srgb,var(--primary) 18%,transparent);border-radius:50%}.attendance-clock-shell::after{content:"";position:absolute;width:370px;height:370px;border-top:2px solid var(--primary);border-right:2px solid #fff0;border-radius:50%;transform:rotate(-42deg);opacity:.55}.attendance-clock{position:relative;z-index:2;width:275px;height:275px;border:1px solid var(--border);border-radius:50%;background:var(--surface);box-shadow:inset 0 0 28px color-mix(in srgb,var(--primary) 7%,transparent)}.attendance-clock__ticks{position:absolute;inset:7px;border-radius:50%;background:repeating-conic-gradient(from 0deg,var(--primary) 0deg 1deg,transparent 1deg 6deg);opacity:.28;-webkit-mask:radial-gradient(transparent 0 89%,#000 90%);mask:radial-gradient(transparent 0 89%,#000 90%)}.attendance-clock__number{position:absolute;z-index:4;color:var(--text-secondary);font-size:10px;font-weight:800}.number-12{top:27px;left:50%;transform:translateX(-50%)}.number-3{top:50%;right:25px;transform:translateY(-50%)}.number-6{bottom:27px;left:50%;transform:translateX(-50%)}.number-9{top:50%;left:25px;transform:translateY(-50%)}.attendance-hand{position:absolute;z-index:5;left:50%;bottom:50%;transform:translateX(-50%) rotate(0deg);transform-origin:bottom center;border-radius:10px}.attendance-hand--hour{width:4px;height:65px;background:var(--text)}.attendance-hand--minute{width:3px;height:88px;background:var(--primary)}.attendance-hand--second{width:1px;height:98px;background:var(--primary);opacity:.7}.attendance-clock__center{position:absolute;z-index:7;top:50%;left:50%;width:12px;height:12px;transform:translate(-50%,-50%);border:2px solid var(--surface);border-radius:50%;background:var(--primary);box-shadow:0 0 12px color-mix(in srgb,var(--primary) 55%,transparent)}.attendance-digital{position:absolute;z-index:8;bottom:-45px;width:275px;padding:12px 15px;text-align:center;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);box-shadow:var(--shadow)}.attendance-digital__time{color:var(--text);font-family:"Courier New",monospace;font-size:31px;font-weight:500;letter-spacing:4px;line-height:1.2}.attendance-digital__date{margin-top:6px;color:var(--primary);font-size:8px;font-weight:800;letter-spacing:1.4px}@media(max-width:900px){.attendance-hero{min-height:auto;padding:75px 20px 110px}.attendance-hero__grid{grid-template-columns:1fr;text-align:center;gap:70px}.attendance-hero__content{max-width:750px;margin:auto}.attendance-hero__description{margin-left:auto;margin-right:auto}.attendance-hero__actions,.attendance-stats{justify-content:center}}@media(max-width:600px){.attendance-hero{padding:60px 14px 100px}.attendance-hero h1{font-size:38px;letter-spacing:-1.2px}.attendance-hero__description{font-size:14px}.attendance-hero__actions{display:grid;grid-template-columns:1fr}.attendance-btn{width:100%}.attendance-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:left}.attendance-stat{padding-left:8px}.attendance-stat strong{font-size:13px}.attendance-stat span{font-size:7px;letter-spacing:.5px}.attendance-clock-shell{width:330px;height:330px}.attendance-clock-shell::before{width:270px;height:270px}.attendance-clock-shell::after{width:295px;height:295px}.attendance-clock{width:225px;height:225px}.attendance-hand--hour{height:52px}.attendance-hand--minute{height:72px}.attendance-hand--second{height:80px}.attendance-digital{width:245px;bottom:-48px}.attendance-digital__time{font-size:27px}.number-12{top:22px}.number-6{bottom:22px}.number-3{right:20px}.number-9{left:20px}}
+<!DOCTYPE html><html lang="id"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ai Mr Ferdy - AI Tools, SEO Systems &amp; Digital Platform</title><meta name="description" content="Ai Mr Ferdy membangun aplikasi AI, SEO systems, automation tools dan platform digital modern untuk bisnis, creator dan internet ecosystem."><meta name="author" content="OpenPobo"><meta name="theme-color" content="#ffffff"><meta name="robots" content="index,follow,max-image-preview:large"><meta name="google-site-verification" content="9ZFiLYbflJbc_gBgHtaO8e4bVJZwKzYOE5OoydO4-sw"><link rel="canonical" href="https://aimrferdy.app/"><link rel="alternate" hreflang="id-ID" href="https://aimrferdy.app/"><!-- Open Graph --><meta property="og:type" content="website"><meta property="og:title" content="Ai Mr Ferdy - AI Tools, SEO Systems &#38; Digital Platform"><meta property="og:description" content="Ai Mr Ferdy membangun aplikasi AI, SEO systems, automation tools dan platform digital modern untuk bisnis, creator dan internet ecosystem."><meta property="og:image" content="https://aimrferdy.app/images/og-cover.jpg"><meta property="og:url" content="https://aimrferdy.app/"><meta property="og:site_name" content="AI Mr Ferdy — Smart Research Assistant"><!-- Twitter --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Ai Mr Ferdy - AI Tools, SEO Systems &#38; Digital Platform"><meta name="twitter:description" content="Ai Mr Ferdy membangun aplikasi AI, SEO systems, automation tools dan platform digital modern untuk bisnis, creator dan internet ecosystem."><meta name="twitter:image" content="https://aimrferdy.app/images/og-cover.jpg"><link rel="alternate" type="application/rss+xml" title="AI Mr Ferdy — Smart Research Assistant" href="https://aimrferdy.app/rss.xml"><!-- preload --><link rel="preload" href="https://aimrferdy.app/images/og-cover.jpg" as="image"><!-- schema --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Ai Mr Ferdy","url":"https://aimrferdy.app/","logo":"https://aimrferdy.app/images/og-cover.jpg"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"AI Mr Ferdy — Smart Research Assistant","url":"https://aimrferdy.app/","potentialAction":{"@type":"SearchAction","target":"https://aimrferdy.app/search?q={search_term_string}","query-input":"required name=search_term_string"}}</script><link rel="stylesheet" href="/styles/global.css"><script>
+  if (localStorage.getItem("theme") === "light") {
+    document.documentElement.classList.add("light-mode");
+  }
+</script><script>
+(()=>{const savedTheme=localStorage.getItem("theme");const systemTheme=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=savedTheme||systemTheme})()
+</script><style>:root{--bg:#edf1f5;--surface:#ffffff;--surface-hover:#f1f4f7;--footer:#e1e6eb;--footer-border:#c7cdd4;--text:#202124;--text-secondary:#5f6368;--border:#c7cdd1;--primary:#1a73e8;--radius:14px;--radius-lg:22px;--shadow:0 5px 18px rgba(0,0,0,.1);--transition:.25s ease}html[data-theme=dark]{--bg:#202124;--surface:#303134;--surface-hover:#3c4043;--footer:#171717;--footer-border:#313335;--text:#e8eaed;--text-secondary:#9aa0a6;--border:#5f6368;--primary:#8ab4f8;--shadow:0 5px 18px rgba(0,0,0,.35)}*{margin:0;padding:0;box-sizing:border-box}html{min-height:100%;background:var(--bg);scroll-behavior:smooth}body{min-height:100vh;font-family:Inter,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 15% 0%,rgb(26 115 232 / .13),transparent 35%),var(--bg);transition:background var(--transition),color var(--transition)}a{color:inherit;text-decoration:none}.header{position:sticky;top:0;z-index:1000;background:var(--bg);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}.header-wrap{max-width:1200px;height:60px;min-height:60px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}.header-logo{color:var(--text);font-size:1.5rem;font-weight:700;text-decoration:none}.header-logo span{color:var(--primary)}.nav{display:flex;align-items:center;gap:32px}.nav a{color:var(--text-secondary);transition:color var(--transition)}.nav a:hover{color:var(--text)}.theme-toggle{width:44px;height:44px;display:flex;align-items:center;justify-content:center;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:50%;cursor:pointer}.theme-toggle:hover{background:var(--surface-hover)}.theme-toggle svg{width:22px;height:22px}.sun,html[data-theme=dark] .moon{display:none}html[data-theme=dark] .sun{display:block}.menu-toggle{display:none;width:44px;height:44px;color:var(--text);background:none;border:none;font-size:28px;cursor:pointer}@media(max-width:768px){.menu-toggle{display:block;z-index:1001}.header-wrap{display:grid;grid-template-columns:44px 1fr 44px}.header-logo{justify-self:center;font-size:1.2rem}.nav{position:fixed;top:0;left:-100%;width:100%;height:100vh;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:90px 20px;background:var(--bg);transition:left .3s ease;z-index:999}.nav.active{left:0}.nav a{width:100%;display:block;padding:12px 16px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:8px}.nav a:hover{border-color:var(--primary);background:var(--surface-hover)}}footer{padding:55px 0 24px;color:var(--text);background:var(--footer);border-top:1px solid var(--footer-border)}.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}.footer-title{margin:0 0 14px;color:var(--text);font-size:18px;font-weight:700;line-height:1.4}.footer-description{margin:0;max-width:520px;color:var(--text-secondary);line-height:1.8}.footergrid a{display:block;width:max-content;max-width:100%;margin:8px 0;color:var(--text-secondary);text-decoration:none;transition:color var(--transition)}.footergrid a:hover{color:var(--primary)}.copy{margin:34px auto 0;padding-top:18px;color:var(--text-secondary);border-top:1px solid var(--footer-border);text-align:center;font-size:14px;line-height:1.6}@media(max-width:900px){.footergrid{grid-template-columns:repeat(2,1fr);gap:25px}.footergrid>div:first-child{grid-column:1/-1}}@media(max-width:560px){.footergrid{grid-template-columns:1fr}.footergrid>div:first-child{grid-column:auto}}
 </style>
-<script is:inline>
+<link rel="amphtml" href="https://aimrferdy.com/partner/aimrferdyapp/" />
+
+<link rel="stylesheet" href="/_astro/_slug_.JKA2bt-G.css">
+<link rel="stylesheet" href="/_astro/index.DRINdJI_.css"></head> <body> <header class="header"><div class="header-wrap"> <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button> <a href="/" class="header-logo">AI<span>MR FERDY</span></a> <nav class="nav" id="nav"><a href="/">Home</a> <a href="/about">About</a> <a href="/privacy">Privacy</a> <a href="/disclaimer">Disclaimer</a> <a href="/contact">Contact</a> </nav> <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="M4.93 4.93l1.41 1.41"></path><path d="M17.66 17.66l1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="M4.93 19.07l1.41-1.41"></path><path d="M17.66 6.34l1.41-1.41"></path></svg><svg class="moon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 14.5A8.5 8.5 0 1 1 12.5 4A7 7 0 0 0 20 14.5z"></path></svg></button> </div> </header> <main>  <section class="attendance-hero"> <div class="attendance-hero__grid"><div class="attendance-hero__content"><p class="attendance-hero__eyebrow"><span></span> SMART RESEARCH ASSISTANT </p><h1> AI Mr Ferdy <strong>Real-Time</strong> Smart Research Assistant </h1><p class="attendance-hero__description"> Platform AI yang membantu mahasiswa, peneliti, dan akademisi dalam menyusun proposal penelitian, meringkas jurnal, menganalisis data, membuat sitasi, serta meningkatkan produktivitas riset melalui berbagai tools berbasis kecerdasan buatan.</p><div class="attendance-hero__actions"><a href="/presensi" class="attendance-btn attendance-btn--primary"><span>✓</span> LIHAT TOOLS </a><a href="#fitur" class="attendance-btn attendance-btn--secondary"> LIHAT FITUR <span>→</span></a></div><div class="attendance-stats"><div class="attendance-stat"><strong> REAL-TIME </strong><span> DATA permainan </span></div><div class="attendance-stat"><strong> 24/7 </strong><span> AI ASSISTANT </span></div><div class="attendance-stat"><strong> DIGITAL </strong><span> LAPORAN OTOMATIS </span></div></div></div><div class="attendance-clock-area"><div class="attendance-clock-shell"><div class="attendance-clock"><div class="attendance-clock__ticks"></div><span class="attendance-clock__number number-12"> 12 </span><span class="attendance-clock__number number-3"> 03 </span><span class="attendance-clock__number number-6"> 06 </span><span class="attendance-clock__number number-9"> 09 </span><div class="attendance-hand attendance-hand--hour" id="hourHand"></div><div class="attendance-hand attendance-hand--minute" id="minuteHand"></div><div class="attendance-hand attendance-hand--second" id="secondHand"></div><div class="attendance-clock__center"></div></div><div class="attendance-digital"><div class="attendance-digital__time" id="digitalTime"> 00:00:00 </div><div class="attendance-digital__date" id="digitalDate"> RESEARCH • WRITING • PRODUCTIVITY </div></div></div></div></div> </section> <main> <div class="container"> <section class="featured home-section"> <div class="home-header"> <span class="home-label">Featured Articles</span> <h2>AI Research & Productivity Guides</h2> <p>
+Artikel pilihan AI Mr Ferdy yang membahas artificial intelligence,
+      penelitian, SEO, produktivitas, dan teknologi digital modern.
+</p> </div> <div class="featured-grid">  </div> </section> <section class="latest"> <div class="container"> <header class="latest__header"> <span class="latest__label">
+Artikel Terbaru
+</span> <h2>
+Insight Terbaru Seputar AI, Penelitian, dan Produktivitas Akademik
+</h2> <p>
+Temukan pembahasan terbaru mengenai pemanfaatan kecerdasan buatan, metode penelitian, pengelolaan referensi, hingga berbagai strategi belajar yang disusun untuk membantu mahasiswa, peneliti, dan akademisi memperoleh wawasan yang lebih luas.
+</p> </header> <div class="latest__grid"> <article class="latest__card"> <a href="/blog/ara-membuat-website" class="latest__image"> <img alt="Cara Membuat Website Astro yang Cepat dan SEO Friendly" loading="lazy"> </a> <div class="latest__content"> <h3> <a href="/blog/ara-membuat-website"> Cara Membuat Website Astro yang Cepat dan SEO Friendly </a> </h3> <p> Panduan membuat website Astro yang ringan, cepat, dan SEO friendly untuk kebutuhan website modern. </p> <a href="/blog/ara-membuat-website" class="latest__link">
+Baca Selengkapnya →
+</a> </div> </article> </div> </div> </section> <section class="categories home-section home-section--surface"> <div class="home-wrap"> <header class="home-header"> <span class="home-label">
+RESEARCH CATEGORIES
+</span> <h2 class="home-title">
+Solusi AI untuk Setiap Tahapan Penelitian
+</h2> <p class="home-desc">
+AI Mr Ferdy menghadirkan berbagai kategori tools yang dirancang untuk mendukung proses penelitian secara menyeluruh. Mulai dari pencarian referensi hingga penyusunan karya ilmiah, setiap fitur membantu pekerjaan menjadi lebih cepat, terstruktur, dan efisien.
+</p> </header> <div class="home-grid"> <article class="home-card"> <h3>Literature Review</h3> <p>
+Memahami isi jurnal, menemukan poin penting, membandingkan penelitian terdahulu, serta membantu menyusun tinjauan pustaka dengan lebih sistematis.
+</p> <a href="/kategori/literature-review">
+Pelajari Selengkapnya →
+</a> </article> <article class="home-card"> <h3>Academic Writing</h3> <p>
+Membantu menyusun proposal penelitian, metodologi, pembahasan, hingga penyempurnaan karya ilmiah dengan struktur yang lebih rapi dan mudah dikembangkan.
+</p> <a href="/kategori/academic-writing">
+Pelajari Selengkapnya →
+</a> </article> <article class="home-card"> <h3>Citation & References</h3> <p>
+Mempermudah penyusunan sitasi dan daftar pustaka sehingga penulisan akademik menjadi lebih konsisten, akurat, dan sesuai kebutuhan penelitian.
+</p> <a href="/kategori/citation">
+Pelajari Selengkapnya →
+</a> </article> <article class="home-card"> <h3>Data Analysis</h3> <p>
+Mendukung proses analisis data, interpretasi hasil penelitian, serta penyusunan pembahasan berdasarkan informasi yang lebih mudah dipahami.
+</p> <a href="/kategori/data-analysis">
+Pelajari Selengkapnya →
+</a> </article> <article class="home-card"> <h3>Research Productivity</h3> <p>
+Mengurangi pekerjaan berulang melalui otomatisasi sehingga peneliti dapat lebih fokus pada pengembangan ide dan kualitas penelitian.
+</p> <a href="/kategori/productivity">
+Pelajari Selengkapnya →
+</a> </article> <article class="home-card"> <h3>AI Research Tools</h3> <p>
+Jelajahi berbagai tools AI yang terintegrasi dalam AI Mr Ferdy untuk membantu proses riset, penulisan, dan pengelolaan referensi dalam satu platform.
+</p> <a href="/tools">
+Lihat Semua Tools →
+</a> </article> </div> </div> </section> <section class="faq home-section home-section--bg"> <div class="home-wrap home-wrap--sm"> <header class="home-header"> <span class="home-label">FAQ</span> <h2 class="home-title">
+Pertanyaan yang Sering Diajukan tentang AI Mr Ferdy
+</h2> <p class="home-desc">
+Berikut beberapa pertanyaan yang paling sering diajukan oleh mahasiswa, dosen, peneliti, dan akademisi sebelum menggunakan AI Mr Ferdy sebagai Smart Research Assistant.
+</p> </header> <details class="faq-item"> <summary>
+Apa itu AI Mr Ferdy?
+</summary> <div class="faq-content"> <p>
+AI Mr Ferdy merupakan Smart Research Assistant berbasis kecerdasan buatan yang dirancang untuk membantu proses penelitian, mulai dari menemukan referensi, merangkum jurnal, menyusun proposal, membuat sitasi, hingga meningkatkan produktivitas penulisan akademik.
+</p> </div> </details> <details class="faq-item"> <summary>
+Siapa yang dapat menggunakan AI Mr Ferdy?
+</summary> <div class="faq-content"> <p>
+Platform ini dapat digunakan oleh mahasiswa, dosen, peneliti, akademisi, maupun profesional yang membutuhkan bantuan dalam pengolahan informasi, analisis referensi, dan penyusunan dokumen ilmiah.
+</p> </div> </details> <details class="faq-item"> <summary>
+Apakah AI Mr Ferdy dapat menggantikan proses penelitian?
+</summary> <div class="faq-content"> <p>
+Tidak. AI Mr Ferdy berfungsi sebagai asisten penelitian yang membantu mempercepat pekerjaan. Seluruh hasil tetap perlu ditinjau, diverifikasi, dan disesuaikan oleh pengguna sesuai kebutuhan akademik maupun standar institusi.
+</p> </div> </details> <details class="faq-item"> <summary>
+Apakah AI Mr Ferdy mendukung pembuatan sitasi?
+</summary> <div class="faq-content"> <p>
+Ya. AI Mr Ferdy membantu menyusun referensi dan sitasi sesuai kebutuhan penulisan ilmiah sehingga proses penyusunan daftar pustaka menjadi lebih cepat dan lebih terstruktur.
+</p> </div> </details> <details class="faq-item"> <summary>
+Mengapa memilih AI Mr Ferdy?
+</summary> <div class="faq-content"> <p>
+AI Mr Ferdy dikembangkan dengan fokus pada kebutuhan penelitian modern. Platform ini menggabungkan berbagai alat berbasis AI dalam satu ekosistem sehingga pengguna dapat menghemat waktu, meningkatkan kualitas analisis, dan bekerja lebih produktif selama proses riset.
+</p> </div> </details> </div> </section> <section class="cta home-section"> <div class="home-wrap home-wrap--sm"> <span class="home-label">
+SMART RESEARCH ASSISTANT
+</span> <h2 class="home-title">
+Tingkatkan Produktivitas Penelitian Bersama AI Mr Ferdy
+</h2> <p class="home-desc">
+AI Mr Ferdy membantu mahasiswa, dosen, peneliti, dan akademisi menyelesaikan proses penelitian dengan lebih cepat, mulai dari pencarian referensi, analisis jurnal, penyusunan proposal, pembuatan sitasi, hingga penyempurnaan naskah ilmiah dalam satu platform yang praktis dan efisien.
+</p> <div class="cta-action"> <a href="/tools" class="button button--primary">
+Jelajahi Tools AI
+</a> <a href="/blog" class="button button--outline">
+Baca Artikel
+</a> </div> </div> </section> </div> </main>  <script>
 const hourHand=document.getElementById("hourHand");const minuteHand=document.getElementById("minuteHand");const secondHand=document.getElementById("secondHand");const digitalTime=document.getElementById("digitalTime");const digitalDate=document.getElementById("digitalDate");function pad(number){return String(number).padStart(2,"0")}
 function updateAttendanceClock(){const now=new Date();const hours=now.getHours();const minutes=now.getMinutes();const seconds=now.getSeconds();const hourDegree=(hours%12)*30+minutes*0.5;const minuteDegree=minutes*6+seconds*0.1;const secondDegree=seconds*6;hourHand.style.transform="translateX(-50%) rotate("+hourDegree+"deg)";minuteHand.style.transform="translateX(-50%) rotate("+minuteDegree+"deg)";secondHand.style.transform="translateX(-50%) rotate("+secondDegree+"deg)";digitalTime.textContent=pad(hours)+":"+pad(minutes)+":"+pad(seconds);digitalDate.textContent=new Intl.DateTimeFormat("id-ID",{weekday:"long",day:"2-digit",month:"long",year:"numeric"}).format(now).toUpperCase()}
 updateAttendanceClock();setInterval(updateAttendanceClock,1000)
-</script>
+</script>  </main> <footer> <div class="container"> <div class="footergrid"> <div> <div class="footer-title">AI Mr Ferdy</div> <p class="footer-description">
+AI Mr Ferdy merupakan platform Smart Research Assistant berbasis kecerdasan buatan untuk membantu penyusunan skripsi, tesis, proposal penelitian, ringkasan jurnal, analisis data, sitasi akademik, dan berbagai kebutuhan riset.
+</p> </div> <div> <div class="footer-title">Latest Posts</div> <a href="/blog/ara-membuat-website/"> Cara Membuat Website Astro yang Cepat dan SEO Friendly </a> </div> <div> <div class="footer-title">Popular Posts</div>  </div> </div> <div class="copy">Copyright &copy; 2026 Ai Mr Ferdy. Seluruh Hak Cipta Dilindungi.</div> </div> </footer> <script type="module">const t=document.documentElement,a=document.getElementById("themeToggle"),o=window.matchMedia("(prefers-color-scheme: dark)");a.onclick=()=>{const e=t.dataset.theme==="dark"?"light":"dark";t.dataset.theme=e,localStorage.setItem("theme",e)};o.addEventListener("change",e=>{localStorage.getItem("theme")||(t.dataset.theme=e.matches?"dark":"light")});const n=document.getElementById("menuToggle"),c=document.getElementById("nav");n.onclick=()=>{c.classList.toggle("active"),n.textContent=c.classList.contains("active")?"✕":"☰"};document.querySelectorAll(".nav a").forEach(e=>{e.onclick=()=>{c.classList.remove("active"),n.textContent="☰"}});</script> <script>
 
-</MainLayout>
+const html = document.documentElement;
+
+const themeBtn =
+  document.getElementById("themeToggle");
+
+/* LOAD */
+
+if(localStorage.getItem("theme")==="light"){
+  html.classList.add("light-mode");
+}
+
+/* TOGGLE */
+
+themeBtn?.addEventListener("click",()=>{
+
+  html.classList.toggle("light-mode");
+
+  localStorage.setItem(
+    "theme",
+    html.classList.contains("light-mode")
+      ? "light"
+      : "dark"
+  );
+
+});
+
+</script> <script>
+
+function openMenu(){
+  document
+    .getElementById("mobileMenu")
+    .classList.add("active");
+}
+
+function closeMenu(){
+  document
+    .getElementById("mobileMenu")
+    .classList.remove("active");
+}
+
+
+/* FAQ */
+
+const faqItems =
+  document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item=>{
+
+  item
+    .querySelector(".faq-question")
+    .addEventListener("click",()=>{
+
+      item.classList.toggle("active");
+
+    });
+
+});
+
+</script> <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"a0f389ac9d9d4f0a91199dfcd334c895","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body> </html>
